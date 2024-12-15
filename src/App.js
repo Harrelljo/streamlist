@@ -1,8 +1,11 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import StreamList from './StreamList';
-import Movies from './Movies';
-import Cart from './Cart';
-import About from './About';
+// src/App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import StreamList from './StreamList';  // Make sure this file exists
+import Movies from './Movies';          // Make sure this file exists
+import Cart from './Cart';              // Make sure this file exists
+import About from './About';            // Make sure this file exists
 
 function App() {
   return (
@@ -10,19 +13,27 @@ function App() {
       <div>
         <nav>
           <ul>
-            <li><Link to="/">StreamList</Link></li>
-            <li><Link to="/movies">Movies</Link></li>
-            <li><Link to="/cart">Cart</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/movies">Movies</Link>
+            </li>
+            <li>
+              <Link to="/cart">Cart</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
           </ul>
         </nav>
-        
-        <Switch>
-          <Route path="/" exact component={StreamList} />
-          <Route path="/movies" component={Movies} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/about" component={About} />
-        </Switch>
+
+        <Routes>
+          <Route path="/" element={<StreamList />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
     </Router>
   );
