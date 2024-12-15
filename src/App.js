@@ -1,16 +1,31 @@
-// src/App.js
-import React from 'react';
-import './styles.css'; // Import the CSS file here
-import Navbar from './components/Navbar';
-import StreamList from './components/StreamList';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import StreamList from './StreamList';
+import Movies from './Movies';
+import Cart from './Cart';
+import About from './About';
 
-const App = () => {
+function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <StreamList />
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li><Link to="/">StreamList</Link></li>
+            <li><Link to="/movies">Movies</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
+            <li><Link to="/about">About</Link></li>
+          </ul>
+        </nav>
+        
+        <Switch>
+          <Route path="/" exact component={StreamList} />
+          <Route path="/movies" component={Movies} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
