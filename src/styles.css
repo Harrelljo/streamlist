@@ -1,0 +1,52 @@
+/* src/styles.css */
+
+/* Global styles */
+body {
+  font-family: 'Bubblegum Sans', cursive; /* Add the font you are using */
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav h1 {
+  margin: 0;
+}
+
+/* Stream List Styles */
+.stream-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.stream-item {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: calc(33% - 20px);
+  box-sizing: border-box;
+}
+
+.stream-item h2 {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.stream-item p {
+  color: #555;
+  font-size: 1rem;
+}
