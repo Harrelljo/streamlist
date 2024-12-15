@@ -1,7 +1,8 @@
 // src/App.js
 import React from 'react';
-import Navbar from './components/Navbar';  // Adjust the import path
-import StreamList from './components/StreamList';  // Adjust the import path
+import './styles.css'; // Import the CSS file here
+import Navbar from './components/Navbar';
+import StreamList from './components/StreamList';
 
 const App = () => {
   return (
