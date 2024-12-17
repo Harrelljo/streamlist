@@ -1,23 +1,27 @@
-// src/components/StreamList.js
-
-import React from 'react';
-import StreamItem from './StreamItem';  // Importing StreamItem
-
-const streams = [
-  { id: 1, title: 'Stream 1', description: 'This is stream 1.' },
-  { id: 2, title: 'Stream 2', description: 'This is stream 2.' },
-  { id: 3, title: 'Stream 3', description: 'This is stream 3.' },
-];
+import React, { useState } from "react";
+import "./styles.css";
 
 function StreamList() {
+  const [input, setInput] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("User Input:", input);
+    setInput(""); // Clear the input field
+  };
+
   return (
-    <div>
-      <h1>Stream List</h1>
-      <div className="stream-list">
-        {streams.map(stream => (
-          <StreamItem key={stream.id} stream={stream} />
-        ))}
-      </div>
+    <div className="container">
+      <h2>Welcome to StreamList</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Add a movie/program to your list"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button type="submit">Add</button>
+      </form>
     </div>
   );
 }
