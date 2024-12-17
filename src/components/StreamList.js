@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles.css";
+import "../styles.css"; // Correct import path for global styles
 
 function StreamList() {
   const [input, setInput] = useState("");
@@ -7,16 +7,16 @@ function StreamList() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("User Input:", input);
-    setInput(""); // Clear the input field
+    setInput("");
   };
 
   return (
-    <div className="container">
-      <h2>Welcome to StreamList</h2>
+    <div>
+      <h1>StreamList</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Add a movie/program to your list"
+          placeholder="Add a movie or program"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
