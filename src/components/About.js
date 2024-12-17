@@ -1,5 +1,7 @@
+import React from "react";
+
 function About() {
-  return <h1>About Page</h1>;
+  return <div className="container"><h2>About Page - Coming Soon</h2></div>;
 }
 
 export default About;
