@@ -1,5 +1,7 @@
+import React from "react";
+
 function Cart() {
-  return <h1>Cart Page</h1>;
+  return <div className="container"><h2>Cart Page - Coming Soon</h2></div>;
 }
 
 export default Cart;
