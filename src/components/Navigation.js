@@ -1,20 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./styles.css";
+import "../styles.css"; // Correct import path for global styles
 
 function Navigation() {
   return (
-    <nav className="navbar">
-      <h1>StreamList</h1>
+    <nav>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/movies">Movies</Link></li>
-        <li><Link to="/cart">Cart</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li><a href="/">StreamList</a></li>
+        <li><a href="/movies">Movies</a></li>
+        <li><a href="/cart">Cart</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </nav>
   );
 }
 
 export default Navigation;
-
