@@ -1,29 +1,58 @@
-import React, { useState } from "react";
-import "./styles.css";
+import React, { useState } from 'react';
+import '../styles/streamlist.css';
 
-function StreamList() {
-  const [input, setInput] = useState("");
+const StreamList = () => {
+  const [events, setEvents] = useState(['Netflix', 'Hulu', 'Disney+']);
+  const [search, setSearch] = useState('');
+  const [sorted, setSorted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("User Input:", input);
-    setInput(""); // Clear the input field
+  const handleSort = () => {
+    setSorted(!sorted);
+    const sortedEvents = [...events].sort((a, b) =>
+      sorted ? a.localeCompare(b) : b.localeCompare(a)
+    );
+    setEvents(sortedEvents);
   };
 
+  const deleteEvent = (index) => {
+    setEvents(events.filter((_, i) => i !== index));
+  };
+
+  const filteredEvents = events.filter((event) =>
+    event.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
-    <div className="container">
-      <h2>Welcome to StreamList</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Add a movie/program to your list"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button type="submit">Add</button>
-      </form>
+    <div>
+      <h1>StreamList</h1>
+      <div className="event-list">
+        <div>
+          <input
+            type="text"
+            placeholder="Search streaming services"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <span className="material-symbols-outlined" onClick={handleSort}>
+            sort_by_alpha
+          </span>
+        </div>
+        <ul>
+          {filteredEvents.map((event, index) => (
+            <li key={index}>
+              {event}
+              <span
+                className="material-symbols-outlined"
+                onClick={() => deleteEvent(index)}
+              >
+                delete
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default StreamList;

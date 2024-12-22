@@ -1,20 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./styles.css";
+import React from 'react';
+import '../styles/navigation.css';
 
-function Navigation() {
+const Navigation = () => {
   return (
-    <nav className="navbar">
-      <h1>StreamList</h1>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/movies">Movies</Link></li>
-        <li><Link to="/cart">Cart</Link></li>
-        <li><Link to="/about">About</Link></li>
-      </ul>
+    <nav>
+      <div className="brand">StreamList</div>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#cart">Cart</a>
+        <a href="#about">About</a>
+      </div>
     </nav>
   );
-}
+};
 
 export default Navigation;
-
