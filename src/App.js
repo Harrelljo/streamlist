@@ -1,26 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import StreamList from "./components/StreamList";
-import Movies from "./components/Movies";
-import Cart from "./components/Cart";
-import About from "./components/About";
-import "./styles.css";
-import "./fonts.css";
+import { Routes, Route } from "react-router-dom"; // Import Routes and Route from react-router-dom
+import Navigation from "./components/Navigation"; // Import Navigation component
+import StreamList from "./components/StreamList"; // Import StreamList component
+import Movies from "./components/Movies"; // Import Movies component
+import Cart from "./components/Cart"; // Import Cart component
+import About from "./components/About"; // Import About component
+import "./styles/styles.css"; // Import global CSS
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<StreamList />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
-    </Router>
+    <div>
+      <Navigation /> {/* Render the Navigation component */}
+      <Routes>
+        <Route path="/" element={<StreamList />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </div>
   );
 }
 

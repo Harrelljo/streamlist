@@ -1,0 +1,35 @@
+nav {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: center; /* Centers the links */
+  align-items: center; /* Aligns the links vertically */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex; /* Makes the list items appear horizontally */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px; /* Space between links */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a:hover {
+  color: #ff6347;
+}
+
+/* Optional: Add icons before text */
+nav ul li a i {
+  margin-right: 8px; /* Space between icon and text */
+}
