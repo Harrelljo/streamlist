@@ -1,43 +1,38 @@
 body {
-  margin: 0;
-  font-family: "Bubblegum Sans", serif;
-  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
   color: #333;
 }
 
-.navbar {
-  background-color: #333;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.navbar ul {
+li {
+  margin: 10px 0;
   list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-}
-
-.container {
-  padding: 20px;
-  text-align: center;
-}
-
-input {
-  padding: 8px;
-  margin-right: 10px;
 }
 
 button {
-  padding: 8px 12px;
-  background-color: #333;
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
   color: white;
   border: none;
+  border-radius: 3px;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
