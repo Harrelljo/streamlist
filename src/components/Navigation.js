@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/navigation.css"; // Import the styles for Navigation
+import { FaHome, FaSearch, FaCartPlus, FaInfoCircle } from "react-icons/fa"; // Import the icons
+import "./../styles/navigation.css"; // Import the CSS for styling
 
 function Navigation() {
   return (
@@ -8,27 +9,22 @@ function Navigation() {
       <ul>
         <li>
           <Link to="/">
-            <i className="fas fa-home"></i> Home
+            <FaHome size={24} /> Home
           </Link>
         </li>
         <li>
           <Link to="/search">
-            <i className="fas fa-search"></i> Search
-          </Link>
-        </li>
-        <li>
-          <Link to="/movies">
-            <i className="fas fa-film"></i> Movies
+            <FaSearch size={24} /> Search
           </Link>
         </li>
         <li>
           <Link to="/cart">
-            <i className="fas fa-shopping-cart"></i> Cart
+            <FaCartPlus size={24} /> Cart
           </Link>
         </li>
         <li>
           <Link to="/about">
-            <i className="fas fa-info-circle"></i> About
+            <FaInfoCircle size={24} /> About
           </Link>
         </li>
       </ul>

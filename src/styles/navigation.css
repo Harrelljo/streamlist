@@ -29,7 +29,13 @@ nav ul li a:hover {
   color: #ff6347;
 }
 
-/* Optional: Add icons before text */
-nav ul li a i {
-  margin-right: 8px; /* Space between icon and text */
+/* Space between icon and text */
+nav ul li a svg {
+  margin-right: 8px; /* Adds space between icon and text */
+  font-size: 20px;  /* You can adjust the size of the icons */
+}
+
+/* Optional: if you want to change the size of the icons on hover */
+nav ul li a:hover svg {
+  color: #ff6347; /* Change icon color on hover */
 }
