@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import MovieCard from "../components/MovieCard"; // Your MovieCard component for displaying each movie
 
-const MovieSearch = () => {
+const MovieSearch = ({ addToCart }) => {
   const [searchTerm, setSearchTerm] = useState(""); // To store the search term
   const [movies, setMovies] = useState([]); // To store the list of movies from the API
   const [loading, setLoading] = useState(false); // To manage loading state
@@ -45,7 +45,10 @@ const MovieSearch = () => {
       <div>
         {movies.length > 0 ? (
           movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+            <div key={movie.id}>
+              <MovieCard movie={movie} />
+              <button onClick={() => addToCart(movie)}>Add to Cart</button> {/* Add to Cart Button */}
+            </div>
           ))
         ) : (
           <p>No results found.</p>
